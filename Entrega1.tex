@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{cabeca}
+
+
+\title{Calculo Numerico}
+\author{Júlio César Rodrigues}
+
+\begin{document}
+\maketitle
+\begin{flushleft}
+\section{LISTA}
+\large{
+
+\begin{exercicio}
+\textbf{Exercício 1.}Dado um polinômio $p : \mathbb{R} \to \mathbb{R}$, digamos
+  $p(x) = c_0 + c_1x + c_2x^2 + \dots + c_nx^n$, e
+  $\overline{x} \in \mathbb{R}$, quantas operações aritméticas (somas
+  e multiplicações) são necessárias para computar $p(\overline{x})$?
+\end{exercicio}
+
+Resposta: N + 1 operações de soma e multiplicação\newline
+
+\begin{exercicio}
+\textbf{Exercício 2.}Considere $\mathcal{P}$ a classe de polinômios. Dado
+  $p(x) \in \mathcal{P}$, $\frac{d}{dx} p \in \mathcal{P}$?
+  $\int p(x)dx \in \mathcal{P}$?
+\end{exercicio}
+Resposta: Sim, toda derivada de um polinomio pertence a classe dos polinomios, e toda integral pertence a classe tambem.\newline
+
+\begin{exercicio}
+   \textbf{Exercício 3.}Qual o valor de $l(i)$ quando $x = x_i$? E quando $x$ assume o valor
+  de algum ponto em $X$ diferemte de $x_i$?
+
+\end{exercicio}
+Resposta: Quando x e igual xi o valor e um. Quando o valor de x e diferente xi e zero.\newline
+
+\begin{exercicio}
+ \textbf{Exercício 4.} Mostre que $p'$ é um polinômio. Dica: mostre que $l(i)$ é um
+  polinômio e que $\mathcal{P}$ é fechada para a soma e múltiplicação
+  por escalar. Pode ser útil saber que é possível decompor um
+  polinômio por suas raizes.\\
+\end{exercicio}
+Resposta: Se a multiplicação por um escalar não faz o polinomio deixar de ser, a soma tambem\newline
+
+\begin{exercicio}
+  \textbf{Exercício 5.}Mostre que $p'$ tem as propriedades que definem $p_{L(f, X)}$.\\
+\end{exercicio}
+Resposta:  dado um conjunto de k + 1 pontos
+    (x0,y0),...(xk,yk) com todos os xi distintos, o polinomio de interpolação de um conjunto de pontos na forma de lagrange é uma combinação linear dos polinômios da base de lagrange
+ p'(x) = somatorio f(x)*lj(x).
+ li(x) = x - xi/xj - xi.
+procuramos uma função que seja um polinômio de grau menor que k
+ p'(xj) = yi j= 0 ... k.
+1. lj(x) é um polinômio e tem grau k.
+2. li(xj)= fij 0<= i,j <= k
+p'(xi) = somatorio ate k yi*fji. \newline
+
+
+
+\begin{exercicio}
+  \textbf{Exercício 8.}Tome $g(x) = x + a$. Considere $(f \circ g)(x) = f(x + a)$. Note que
+  $(f \circ g)(0) = f(a)$. Quais são os valores das derivadas de
+  $f \circ g$ em 0? Descreva $p_{T(f \circ g, 0, k)}$.
+\end{exercicio}
+Resposta: $$\left(\frac{d}{dx} f(a)\right) , \left(\frac{1}{2} \frac{d^2}{dx^2} f(a)\right), \left(\frac{1}{3!} \frac{d^3}{dx^3} f(a)\right), \dots
+$$
+
+$$
+\dots ,\left(\frac{1}{k!} \frac{d^k}{dx^k} f(a)\right)
+$$\newline
+
+\begin{exercicio}
+  \textbf{Exercício 9.}Como o valor de $p_{T(f \circ g, 0, k)}$ (e de suas derivadas) em 0
+  se relaciona com o valor de $f$ (e de suas derivadas) em $a$?\\
+\end{exercicio}
+Resposta: todas as suas derivas serão da forma f(a), como estmao derivando em um ponto zero!\newline
+
+\begin{exercicio}
+  \textbf{Exercício 10.}Note que, ao usarmos $g$, fazemos um ``shift" para a direita (para a
+  esquerda, caso $a < 0$) na reta dos reais (o exercício anterior
+  evidencia isso). Assim, seria preciso desfazer esse ``shift" para
+  obtermos a propriedade desejada. Como poderíamos modificar
+  $p_{T(f \circ g, 0, k)}$ de forma que o ``shift" seja desfeito?
+\end{exercicio}
+
+Resposta: Quando se da um para shift para a esquerda retiramos o shift da direita  tendo a caracteristica generica do polinomio de taylor.\newline
+
+\begin{exercicio}
+  \textbf{Exercício 15.}Usando o método da posição falsa, encontre $\sqrt{7}$ com uma
+  precisão de quatro casas decimais. Quantas iterações foram usadas?
+  Compare com o número de iterações usados pelo método da
+  bisseção. Explique a relação entre os desempenhos dos
+  métodos. Explique também por que não é possível representar
+  $\sqrt{7}$ de forma precisa em um computador.\\
+\end{exercicio}
+Resposta: $f(x) = x^2 - 7$ $[2,3]$\newline
+
+
+\end{flushleft}
+\end{document}
